@@ -34,7 +34,12 @@ module.exports = (env, argv) => {
           inlineSource: 'index.js',
         }),
         new HtmlWebpackInlineSourcePlugin(),
-      ]
+      ],
+
+      devServer: {
+        contentBase: './public',
+        open: true,
+      },
 
     },
 
