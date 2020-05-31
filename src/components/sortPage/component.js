@@ -8,10 +8,10 @@ export default function SortPage(props) {
       <Box>
         <Box display='flex'>
           <Box>
-            <img src='/images/villagers/Admiral.png' onClick={ () => props.onSelectVillager('id') } />
+            <img src='/images/sakes/aiyama720_800.jpg' onClick={ () => props.onSelectVillager('id') } />
           </Box>
           <Box ml={6}>
-            <img src='/images/villagers/Agent_S.png' onClick={ () => props.onSelectVillager('id') } />
+            <img src='/images/sakes/alpha3_800.jpg' onClick={ () => props.onSelectVillager('id') } />
           </Box>
         </Box>
         <Box height={50} display='flex' justifyContent='center' alignItems='center'>
