@@ -1,5 +1,5 @@
 {
-  "name": "animalcrossingsorter",
+  "name": "sakesorter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/HotsumaKawashima/AnimalCrossingSorter.git"
+    "url": "git+ssh://git@github.com:HotsumaKawashima/SakeSorter.git"
   },
   "author": "",
   "license": "ISC",
