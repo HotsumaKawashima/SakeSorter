@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import SortPage from '../sortPage';
+import SortPage  from '../sortPage';
+import FrontPage from '../frontPage';
 
 export default (props) => {
  return (
     <Switch>
-      <Route exact path='/sort' component={SortPage} />
-      <Redirect    to='/sort' />
+      <Route exact path='/front' component={FrontPage} />
+      <Route exact path='/sort'  component={SortPage} />
+      <Redirect    to='/front' />
     </Switch>
   );
 }

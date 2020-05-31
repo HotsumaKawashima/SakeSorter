@@ -8,9 +8,16 @@ import Box from '@material-ui/core/Box';
 import Router from '../router';
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Cutive Mono',
+  },
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        '@font-face': {
+          fontFamily: 'Cutive Mono',
+          src: `url('./font/CutiveMono-Regular.ttf') format('truetype')`
+        },
         html: {
           height: '100%',
         },
