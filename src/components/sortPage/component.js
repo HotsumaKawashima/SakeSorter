@@ -2,6 +2,8 @@ import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import { ShakeLittle } from 'reshake';
+
 import Box        from '@material-ui/core/Box';
 import Button     from '@material-ui/core/Button';
 import Avatar     from '@material-ui/core/Avatar';
@@ -28,14 +30,18 @@ export default function SortPage(props) {
         </Box>
         <Box display='flex'>
           <Box>
-            <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
-              <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
-            </Zoom>
+            <ShakeLittle>
+              <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
+                  <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
+              </Zoom>
+            </ShakeLittle>
           </Box>
           <Box ml={3}>
-            <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
-              <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
-            </Zoom>
+            <ShakeLittle>
+              <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
+                  <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
+              </Zoom>
+            </ShakeLittle>
           </Box>
         </Box>
       </Box>
