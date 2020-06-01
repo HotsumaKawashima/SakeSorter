@@ -1,1 +1,1 @@
-export default (state, props) => state
+export default (state, props) => state.frontPage
