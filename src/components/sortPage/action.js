@@ -1,4 +1,5 @@
 export const FINISH_PREPARED  = 'SortPageAction.FINISH_PREPARED';
+export const RESET_PREPARED   = 'SortPageAction.RESET_PREPARED';
 export const OPEN_PAGE        = 'SortPageAction.OPEN_PAGE';
 export const CLOSE_PAGE       = 'SortPageAction.CLOSE_PAGE';
 export const OPEN_SAKE        = 'SortPageAction.OPEN_SAKE';
@@ -10,6 +11,12 @@ export const SET_MERGE        = 'SortPageAction.SET_MERGE';
 export const finishPrepared = () => {
   return {
     type: FINISH_PREPARED
+  }
+}
+
+export const resetPrepared = () => {
+  return {
+    type: RESET_PREPARED
   }
 }
 

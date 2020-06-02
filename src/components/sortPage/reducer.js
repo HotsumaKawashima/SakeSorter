@@ -19,6 +19,13 @@ export default (state = defaultState, action) => {
       }
     }
 
+    case Action.RESET_PREPARED: {
+      return {
+        ...state,
+        isPrepared: false,
+      }
+    }
+
     case Action.OPEN_PAGE: {
       return {
         ...state,

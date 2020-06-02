@@ -2,7 +2,7 @@ import * as Action from './action';
 
 export const onLoadPage = () => {
   return (dispatch, getState) => {
-    if(getState().frontPage.isPrepared) {
+    if(getState().resultPage.isPrepared) {
       dispatch(Action.openPage());
       return;
     }

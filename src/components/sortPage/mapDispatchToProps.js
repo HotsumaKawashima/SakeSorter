@@ -12,7 +12,10 @@ export const onLoadPage = () => {
     }
 
     const base = getRandomSakes(getState().app.sakes).map(v => [v]);
-    console.log([...base])
+    const n = base.length;
+    const max = n * Math.log2(n);
+    const progress = 0;
+    const count = 0;
     const merged = [[]];
     if(base.length % 2 > 0) {
       merged[0] = base.shift();
@@ -23,6 +26,10 @@ export const onLoadPage = () => {
 
     dispatch(Action.finishPrepared());
     dispatch(Action.setMerge({
+      n,
+      max,
+      count,
+      progress,
       base,
       left,
       right,
@@ -58,10 +65,13 @@ export const onClickSake = (sake) => {
           merge.merged.push([]);
           merge.left = merge.base.shift();
           merge.right = merge.base.shift();
+          merge.progress += 1;
           dispatch(Action.setLeftSake(merge.left[0]));
           dispatch(Action.setRightSake(merge.right[0]));
           dispatch(Action.setMerge(merge));
         } else if(merge.merged.length > 1) {
+          merge.count += 1;
+          merge.progress = merge.count * merge.n;
           merge.base = merge.merged;
           merge.left = merge.base.shift();
           merge.right = merge.base.shift();
@@ -70,13 +80,16 @@ export const onClickSake = (sake) => {
           dispatch(Action.setRightSake(merge.right[0]));
           dispatch(Action.setMerge(merge));
         } else {
+          // finish merge
           dispatch(Action.closeSake());
+          dispatch(Action.resetPrepared())
           dispatch(Action.setMerge(merge));
           setTimeout(() => {
             dispatch(moveResultPage(merge.merged[0]));
           }, 200)
         }
       } else {
+        merge.progress += 1;
         dispatch(Action.setLeftSake(merge.left[0]));
         dispatch(Action.setRightSake(merge.right[0]));
         dispatch(Action.setMerge(merge));

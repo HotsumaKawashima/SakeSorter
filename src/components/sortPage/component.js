@@ -28,7 +28,7 @@ export default function SortPage(props) {
   return ( props.isPrepared &&
     <Box height='100%' display='flex' justifyContent='center' alignItems='center'>
       <Box>
-        <Box height={50} display='flex' justifyContent='center' alignItems='center'>
+        <Box mb={5} display='flex' justifyContent='center' alignItems='center'>
           <Zoom in={props.isOpen}>
             <Typography>Which do you like?</Typography>
           </Zoom>
@@ -44,6 +44,11 @@ export default function SortPage(props) {
               <SakeImage src={`./images/sakes/${props.rightSake.image}`} onClick={() => props.onClickSake(props.rightSake)}/>
             </Zoom>
           </Box>
+        </Box>
+        <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+          <Zoom in={props.isOpen}>
+            <Typography>{`${props.progress} %`}</Typography>
+          </Zoom>
         </Box>
       </Box>
     </Box>
