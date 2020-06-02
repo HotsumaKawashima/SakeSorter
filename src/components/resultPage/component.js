@@ -37,7 +37,7 @@ export default function ResultPage(props) {
         <Box>
           <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '100ms' : '0ms' }}>
             <Box mb={10}>
-              <Typography align='center'>Your chace !!</Typography>
+              <Typography align='center'>Your chaces !!</Typography>
             </Box>
           </Zoom>
           { props.sakes.map((sake, index) =>
