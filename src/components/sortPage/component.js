@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -20,28 +20,29 @@ const SakeImage = withStyles({
 })(Avatar);
 
 export default function SortPage(props) {
-  return (
+
+  useEffect(() => {
+    props.onLoadPage()
+  }, [])
+
+  return ( props.isPrepared &&
     <Box height='100%' display='flex' justifyContent='center' alignItems='center'>
       <Box>
         <Box height={50} display='flex' justifyContent='center' alignItems='center'>
-          <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
+          <Zoom in={props.isOpen}>
             <Typography>Which do you like?</Typography>
           </Zoom>
         </Box>
         <Box display='flex'>
           <Box>
-            <ShakeLittle>
-              <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
-                  <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
-              </Zoom>
-            </ShakeLittle>
+            <Zoom in={props.isOpen && props.openSake}>
+              <SakeImage src={`./images/sakes/${props.leftSake.image}`} onClick={() => props.onClickSake(props.leftSake)}/>
+            </Zoom>
           </Box>
           <Box ml={3}>
-            <ShakeLittle>
-              <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms' }}>
-                  <SakeImage src='./images/sakes/aiyama720_800.jpg'/>
-              </Zoom>
-            </ShakeLittle>
+            <Zoom in={props.isOpen && props.openSake}>
+              <SakeImage src={`./images/sakes/${props.rightSake.image}`} onClick={() => props.onClickSake(props.rightSake)}/>
+            </Zoom>
           </Box>
         </Box>
       </Box>
