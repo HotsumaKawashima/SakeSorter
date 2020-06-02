@@ -13,7 +13,7 @@ export const onLoadPage = () => {
 
     const base = getRandomSakes(getState().app.sakes).map(v => [v]);
     const n = base.length;
-    const max = n * Math.log2(n);
+    const max = n * (Math.floor(Math.log2(n)) + 1);
     const progress = 0;
     const count = 0;
     const merged = [[]];
@@ -73,9 +73,13 @@ export const onClickSake = (sake) => {
           merge.count += 1;
           merge.progress = merge.count * merge.n;
           merge.base = merge.merged;
+          merge.merged = [[]];
+          if(merge.base.length % 2 > 0) {
+            merge.merged[0] = merge.base.shift();
+            merge.merged.push([]);
+          }
           merge.left = merge.base.shift();
           merge.right = merge.base.shift();
-          merge.merged = [[]];
           dispatch(Action.setLeftSake(merge.left[0]));
           dispatch(Action.setRightSake(merge.right[0]));
           dispatch(Action.setMerge(merge));
