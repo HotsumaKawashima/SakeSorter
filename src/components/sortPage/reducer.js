@@ -4,6 +4,7 @@ const defaultState = {
   isPrepared: false,
   isOpen: false,
   openSake: false,
+  merge: {},
   leftSake: {},
   rightSake: {},
 }
@@ -57,6 +58,13 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         rightSake: action.payload.sake,
+      }
+    }
+
+    case Action.SET_MERGE: {
+      return {
+        ...state,
+        merge: action.payload.merge,
       }
     }
 

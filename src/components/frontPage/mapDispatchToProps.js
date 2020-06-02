@@ -10,7 +10,7 @@ export const onLoadPage = () => {
       return;
     }
     dispatch(Action.finishPrepared());
-    dispatch(Action.setSakes(getRandomSakes(getState().app.sakes, 8)));
+    dispatch(Action.setSakes(getRandomSakes(getState().app.sakes)));
     dispatch(Action.openPage());
   }
 }

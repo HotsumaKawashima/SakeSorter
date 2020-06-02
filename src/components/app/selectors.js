@@ -1,12 +1,10 @@
-export function getRandomSakes(sakes, count) {
-  const set = new Set();
-  const filtered = [];
-  while(set.size < count) {
-    const i = Math.floor(Math.random() * Math.floor(sakes.length));
-    if(!set.has(i)) {
-      set.add(i);
-      filtered.push(sakes[i]);
-    }
+export function getRandomSakes(sakes) {
+  const array = [...sakes];
+  for(var i = array.length - 1; i > 0; i--){
+        var r = Math.floor(Math.random() * (i + 1));
+        var tmp = array[i];
+        array[i] = array[r];
+        array[r] = tmp;
   }
-  return filtered;
+  return array;
 }

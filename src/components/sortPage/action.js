@@ -5,6 +5,7 @@ export const OPEN_SAKE        = 'SortPageAction.OPEN_SAKE';
 export const CLOSE_SAKE       = 'SortPageAction.CLOSE_SAKE';
 export const SET_LEFT_SAKE    = 'SortPageAction.SET_LEFT_SAKE';
 export const SET_RIGHT_SAKE   = 'SortPageAction.SET_RIGHT_SAKE';
+export const SET_MERGE        = 'SortPageAction.SET_MERGE';
 
 export const finishPrepared = () => {
   return {
@@ -47,5 +48,12 @@ export const setLeftSake = (sake) => {
   return {
     type: SET_LEFT_SAKE,
     payload: { sake },
+  }
+}
+
+export const setMerge = (merge) => {
+  return {
+    type: SET_MERGE,
+    payload: { merge },
   }
 }
