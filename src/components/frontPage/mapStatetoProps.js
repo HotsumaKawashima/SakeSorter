@@ -1,1 +1,5 @@
-export default (state, props) => state.frontPage
+export default (state, props) => {
+  return {
+    ...state.frontPage,
+  }
+}

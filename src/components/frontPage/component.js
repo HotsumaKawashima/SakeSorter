@@ -32,32 +32,32 @@ export default function SortPage(props) {
     props.onLoadPage()
   }, [])
 
-  return (
+  return ( props.isPrepared &&
     <Box height='100%' display='flex' justifyContent='center' alignItems='center'>
       <Box style={{ position: 'relative' }}>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '100ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:   '30px', top: '-175px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[0].image}`} style={{ left:   '30px', top: '-175px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '200ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:  '-85px', top: '-135px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[1].image}`} style={{ left:  '-85px', top: '-135px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '300ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left: '-125px', top:  '-30px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[2].image}`} style={{ left: '-125px', top:  '-30px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '400ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:  '-85px', top:   '85px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[3].image}`} style={{ left:  '-85px', top:   '85px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '500ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:   '30px', top:  '125px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[4].image}`} style={{ left:   '30px', top:  '125px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '600ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:  '145px', top:   '85px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[5].image}`} style={{ left:  '145px', top:   '85px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '700ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:  '195px', top:  '-30px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[6].image}`} style={{ left:  '195px', top:  '-30px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '800ms' : '0ms' }}>
-          <SakeImage src='./images/sakes/aiyama720_800.jpg' style={{ left:  '145px', top: '-135px' }} />
+          <SakeImage src={`./images/sakes/${props.sakes[7].image}`} style={{ left:  '145px', top: '-135px' }} />
         </Zoom>
         <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '1100ms' : '0ms' }}>
           <Box display='flex' justifyContent='center' alignItems='center'>
