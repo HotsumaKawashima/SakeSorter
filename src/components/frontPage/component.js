@@ -37,7 +37,7 @@ export default function SortPage(props) {
     <Box height='100%' display='flex' alignItems='center' justifyContent='center'>
       <Box>
         <Box display='flex' justifyContent='center'>
-          <Box style={{ position: 'absolute' }}>
+          <Box style={{ position: 'relative' }}>
             <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '100ms' : '0ms' }}>
               <SakeImage src={`./images/sakes/${props.sakes[0].image}`} style={{ left:   '30px', top: '-175px' }} />
             </Zoom>
@@ -63,25 +63,25 @@ export default function SortPage(props) {
               <SakeImage src={`./images/sakes/${props.sakes[7].image}`} style={{ left:  '145px', top: '-135px' }} />
             </Zoom>
             <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '1100ms' : '0ms' }}>
-              <Box display='flex' justifyContent='center' alignItems='center'>
+              <Box>
                 <StartButton variant='outlined' onClick={props.onClickStartButton}>FIND YOUR SAKE</StartButton>
               </Box>
             </Zoom>
+            <Box style={{ width:'500px', position: 'absolute', left:'-170px', top: '235px' }} >
+              <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '1400ms' : '0ms' }}>
+                <Box>
+                  <Box>
+                    <Typography align='center'>Compare sake bottles to find your favorate sake.</Typography>
+                  </Box>
+                  <Box>
+                    <Typography align='center'>Have fun!! (≧∇≦)b</Typography>
+                  </Box>
+                </Box>
+              </Zoom>
+            </Box>
           </Box>
         </Box>
         <Box>
-          <Box>
-            <Zoom in={props.isOpen} style={{ transitionDelay: props.isOpen ? '1400ms' : '0ms' }}>
-              <Box pt={32}>
-                <Box>
-                  <Typography align='center'>Find your special ranking after comparing sakes.</Typography>
-                </Box>
-                <Box>
-                  <Typography align='center'>Have fun!! (≧∇≦)b</Typography>
-                </Box>
-              </Box>
-            </Zoom>
-          </Box>
         </Box>
       </Box>
     </Box>

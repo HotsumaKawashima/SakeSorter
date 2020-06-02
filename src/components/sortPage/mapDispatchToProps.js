@@ -1,5 +1,6 @@
 import * as Action from './action';
 
+
 import { getRandomSakes } from '../app/selectors';
 import { moveResultPage } from '../resultPage/operation';
 
