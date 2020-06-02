@@ -69,9 +69,11 @@ export const onClickSake = (sake) => {
           dispatch(Action.setRightSake(merge.right[0]));
           dispatch(Action.setMerge(merge));
         } else {
-          console.log("finish");
           dispatch(Action.closeSake());
           dispatch(Action.setMerge(merge));
+          setTimeout(() => {
+            dispatch(moveResultPage(merge.merged[0]));
+          }, 200)
         }
       } else {
         dispatch(Action.setLeftSake(merge.left[0]));
