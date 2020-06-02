@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import { ShakeLittle } from 'reshake';
-
 import Box        from '@material-ui/core/Box';
 import Button     from '@material-ui/core/Button';
 import Avatar     from '@material-ui/core/Avatar';
