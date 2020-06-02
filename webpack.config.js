@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const entry = {
   production : './src/index.js',
@@ -45,12 +46,19 @@ module.exports = (env, argv) => {
           inlineSource: 'index.js',
         }),
         new HtmlWebpackInlineSourcePlugin(),
+        new CopyWebpackPlugin({
+          patterns: [
+            {
+              from: './public/images',
+              to: './images',
+            },
+            {
+              from: './public/font',
+              to: './font',
+            },
+          ],
+        })
       ],
-
-      devServer: {
-        contentBase: './public',
-        open: true,
-      },
 
     },
 
